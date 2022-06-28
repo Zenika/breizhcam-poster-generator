@@ -1,0 +1,106 @@
+[
+  {
+    "id": 1,
+    "name": "Fresque du numérique",
+    "duration": 180,
+    "day": "Mercredi",
+    "start": "10h00",
+    "room": "Amphi A",
+    "authors": [
+      "Luc Sorel-Giffo",
+      "Serge Hardy",
+      "Sylvain Révérault",
+      "Héloïse Dano"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "À la découverte d'Accelerate",
+    "duration": 120,
+    "day": "Mercredi",
+    "start": "13h30",
+    "room": "Amphi C",
+    "authors": ["Antoine Cailly", "Kevin Danezis"]
+  },
+  {
+    "id": 3,
+    "name": "Build your 8-bit computer from scratch",
+    "duration": 55,
+    "day": "Mercredi",
+    "start": "14h35",
+    "room": "Amphi D",
+    "authors": ["Olivier Huber"]
+  },
+  {
+    "id": 4,
+    "name": "Devenir svelte avec Svelte",
+    "duration": 120,
+    "day": "Mercredi",
+    "start": "16h00",
+    "room": "Amphi A",
+    "authors": ["Anthony Le Goas", "Patrice De Saint Steban"]
+  },
+  {
+    "id": 5,
+    "name": "Appwrite est-il prêt à éteindre Firebase ? 🔥",
+    "duration": 55,
+    "day": "Mercredi",
+    "start": "17h05",
+    "room": "Amphi D",
+    "authors": ["Lucas Audart", "Mickael Alves"]
+  },
+  {
+    "id": 6,
+    "name": "Impacts environnementaux du Cloud : the good, the bad, the ugly",
+    "duration": 55,
+    "day": "Jeudi",
+    "start": "11h35",
+    "room": "Amphi A",
+    "authors": ["Sylvain Révéreault"]
+  },
+  {
+    "id": 7,
+    "name": "A la découverte d'Apache Pinot et de ses diférents types indexes",
+    "duration": 55,
+    "day": "Jeudi",
+    "start": "13h30",
+    "room": "Amphi C",
+    "authors": ["Loïc Mathieu"]
+  },
+  {
+    "id": 8,
+    "name": "Disaster Radio: Comment communiquer en cas de coupure 4G ?",
+    "duration": 55,
+    "day": "Jeudi",
+    "start": "13h30",
+    "room": "Amphi D",
+    "authors": ["Glenn Feunteun"]
+  },
+  {
+    "id": 9,
+    "name": "A11y pour les nuls",
+    "duration": 55,
+    "day": "Vendredi",
+    "start": "11h35",
+    "room": "Amphi D",
+    "authors": ["Hélène Esnault"]
+  },
+  {
+    "id": 10,
+    "name": "Développer une app Java sans JDK sur son poste ? Prenez votre IDE Cloud GitPod et le tour est joué !",
+    "duration": 15,
+    "day": "Vendredi",
+    "start": "13h05",
+    "room": "Amphi D",
+    "authors": ["Jean-Philippe Baconnais"]
+  },
+  {
+    "id": 11,
+    "name": "Identité numérique décentralisée et droit d'être soi : protéger son intégrité sur Internet",
+    "duration": 55,
+    "day": "Vendredi",
+    "start": "16h00",
+    "room": "Amphi D",
+    "authors": ["Adrien Wattez", "Antoine Cailly"]
+  }
+]

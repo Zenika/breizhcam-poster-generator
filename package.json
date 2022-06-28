@@ -1,0 +1,25 @@
+{
+  "name": "breizhcamp2022",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "npm run build && start-server-and-test preview http://localhost:3000 assets",
+    "preview": "nuxt preview",
+    "assets": "node generate.js"
+  },
+  "devDependencies": {
+    "cli-progress": "^3.11.2",
+    "github-slugger": "^1.4.0",
+    "imagemin": "^8.0.1",
+    "imagemin-pngquant": "^9.0.2",
+    "lucide-vue-next": "^0.70.0",
+    "normalize.css": "^8.0.1",
+    "nuxt": "3.0.0-rc.4",
+    "path": "^0.12.7",
+    "puppeteer": "^15.1.1",
+    "sass": "^1.53.0",
+    "start-server-and-test": "^1.14.0"
+  }
+}

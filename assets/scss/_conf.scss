@@ -1,0 +1,122 @@
+$primaryColor: #df2147 !default;
+$secondaryColor: #000 !default;
+$textColor: #000 !default;
+
+$desktop: 1500px !default;
+$smallDesktop: 1400px !default;
+$bigTablet: 1024px !default;
+$tablet: 900px !default;
+$bigPhone: 720px !default;
+$phone: 440px !default;
+$smallPhone: 360px !default;
+
+$fontFamily: "Nunito", Arial, Helvetica, sans-serif !default;
+$fontFamilyTitle: var(--font-family) !default;
+$fontSize: 1.6rem !default;
+
+@function toHSL($color) {
+  @if ($color != null) {
+    @return #{hue($color)}, #{saturation($color)}, #{lightness($color)};
+  }
+}
+
+@mixin generateCustomColorProps($color, $name) {
+  @if ($color != null and $name != null) {
+    --#{$name}-hue: #{hue($color)};
+    --#{$name}-saturation: #{saturation($color)};
+    --#{$name}-light: #{lightness($color)};
+    --#{$name}-hsl: var(--#{$name}-hue), var(--#{$name}-saturation),
+      var(--#{$name}-light);
+    --#{$name}: hsla(var(--#{$name}-hsl), 1);
+  }
+}
+
+@mixin breakpoint($point: null, $type: down width) {
+  @if ($point != null) {
+    $whichProp: "width";
+
+    @if (
+      length($type) >
+        1 and
+        (nth($type, 1) == "height" or nth($type, 2) == "height")
+    ) {
+      $whichProp: "height";
+    }
+
+    @if (length($point) > 1) {
+      $maxPoint: nth($point, 2);
+      $minPoint: nth($point, 1);
+
+      @if (nth($point, 1) > nth($point, 2)) {
+        $maxPoint: nth($point, 1);
+        $minPoint: nth($point, 2);
+      }
+
+      $finalMinPoint: $minPoint + 1;
+      $finalMaxPoint: $maxPoint;
+
+      @if (nth($type, 1) == "up" or nth($type, 2) == "up") {
+        $finalMinPoint: $minPoint;
+        $finalMaxPoint: $maxPoint - 1;
+      }
+
+      @media (min-#{$whichProp}: #{$finalMinPoint}) and (max-#{$whichProp}: #{$finalMaxPoint}) {
+        @content;
+      }
+    } @else {
+      $finalPoint: $point;
+      $finalType: "max-#{$whichProp}";
+
+      @if (length($type) > 1) {
+        @if (nth($type, 1) == "up" or nth($type, 2) == "up") {
+          $finalPoint: $point + 1;
+          $finalType: "min-#{$whichProp}";
+        }
+      } @else {
+        @if (nth($type, 1) == "up") {
+          $finalPoint: $point + 1;
+          $finalType: "min-#{$whichProp}";
+        }
+      }
+
+      @media ($finalType: #{$finalPoint}) {
+        @content;
+      }
+    }
+  } @else {
+    @warn "Unfortunately, value from first parameter : `#{$point}` - is not a valid one. "
+                + "Please use valid value.";
+  }
+}
+
+@mixin styles {
+  *,
+  *::after,
+  *::before {
+    box-sizing: border-box;
+  }
+
+  html {
+    font-size: 1vmin;
+  }
+
+  :root {
+    --font-family: #{$fontFamily};
+    --font-family-title: #{$fontFamilyTitle};
+    --font-size: #{$fontSize};
+
+    @include generateCustomColorProps($primaryColor, "primary-color");
+    @include generateCustomColorProps($secondaryColor, "secondary-color");
+    @include generateCustomColorProps($textColor, "text-color");
+  }
+
+  body {
+    line-height: 1.4;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: geometricPrecision;
+    font-family: var(--font-family);
+    color: var(--text-color);
+    font-size: var(--font-size);
+  }
+}
