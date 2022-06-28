@@ -27,5 +27,6 @@ li {
   display: inline-block;
   font-size: var(--list-font-size, 2rem);
   margin-bottom: var(--list-margin, 4em);
+  width: 100%;
 }
 </style>
